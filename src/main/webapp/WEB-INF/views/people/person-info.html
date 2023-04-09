@@ -17,7 +17,11 @@
     <b>Книги: </b>
     <br>
     <table th:each="book : ${books}">
-        <tr th:text="${book.title + ', ' + book.author + ', ' + book.year}"></tr>
+        <tr>
+            <td>
+                <span th:style="${book.overdue} ? 'color:red':''" th:text="${book.title + ', ' + book.author + ', ' + book.year}"></span>
+            </td>
+        </tr>
     </table>
     <hr>
 </div>
